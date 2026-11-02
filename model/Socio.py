@@ -1,4 +1,4 @@
-class Libro:
+class Socio:
     # Constructor
     def __init__(self, id, nombre, email, id_libro):
         self.id = id
@@ -7,5 +7,5 @@ class Libro:
         self.id_libro = id_libro
 
     # Metodos
-    def prestaLibro(self):
+    def prestaLibro (self):
         return not self.id_libro
