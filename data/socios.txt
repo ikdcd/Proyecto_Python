@@ -1,15 +1,16 @@
 1, Alejandro Gómez, alejandro.gomez@email.com, 42
 2, María Rodríguez, maria.rodriguez@email.com, 17
-3, Juan Martínez, juan.martinez@email.com,
+3, Juan Martínez, juan.martinez@email.com, 
 4, Ana López, ana.lopez@email.com, 88
 5, Carlos Sánchez, carlos.sanchez@email.com, 5
-6, Laura Pérez, laura.perez@email.com,
+6, Laura Pérez, laura.perez@email.com, 
 7, Javier Martín, javier.martin@email.com, 73
 8, Elena Gómez, elena.gomez@email.com, 12
 9, Diego Fernández, diego.fernandez@email.com, 95
-10, Sofia Ruiz, sofia.ruiz@email.com,
+10, Sofia Ruiz, sofia.ruiz@email.com, 
 11, Lucas Díaz, lucas.diaz@email.com, 61
 12, Lucia Alvarez, lucia.alvarez@email.com, 29
 13, Mateo Moreno, mateo.moreno@email.com, 50
-14, Valentina Gutiérrez, valentina.gutierrez@email.com,
+14, Valentina Gutiérrez, valentina.gutierrez@email.com, 
 15, Manuel Alonso, manuel.alonso@email.com, 81
+16, June Ras, ikdcd@plaiaundi.net, 51
