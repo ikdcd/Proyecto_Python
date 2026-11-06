@@ -1,0 +1,2 @@
+class SocioNoTieneLibroPrestado(Exception):
+    pass

@@ -1,6 +1,10 @@
+from errors.LibroYaPrestado import LibroYaPrestado
+from errors.EmailYaEnUso import EmailYaEnUso
+from errors.SocioNoTieneLibroPrestado import SocioNoTieneLibroPrestado
+from errors.SocioTieneLibroPrestado import SocioTieneLibroPrestado
 from model.Libro import Libro
 from model.Socio import Socio
-from model.Biblioteca import Biblioteca
+from util.Biblioteca import Biblioteca
 
 # Inicializa la biblioteca
 biblioteca = Biblioteca()
@@ -189,30 +193,20 @@ def buscarLibro(busqueda):
 def prestarLibro(idLibro, idSocio):
     libro = biblioteca.getLibroById(idLibro)
     socio = biblioteca.getSocioById(idSocio)
-    if socio.id_libro == "":
-        if libro.id_socio == "":
-            libro.id_socio = idSocio
-            socio.id_libro = idLibro
-            biblioteca.updateLibro(libro)
-            biblioteca.updateSocio(socio)
-            print(f"ADMITIDO: Socio \"{socio.nombre}\" ha prestado el libro \"{libro.titulo}\".")
-        else:
-            print("DENEGADO: Este libro ya esta prestado.")
-    else: 
+    try:
+        biblioteca.prestarLibro(libro, socio)
+        print(f"ADMITIDO: Socio \"{socio.nombre}\" ha prestado el libro \"{libro.titulo}\".")
+    except SocioTieneLibroPrestado as e:
         print("DENEGADO: Este socio ya tiene un libro prestado.")
+    except LibroYaPrestado as e:
+        print("DENEGADO: Este libro ya esta prestado.")
 
 def devolverLibro(idSocio):
     socio = biblioteca.getSocioById(idSocio)
-    if socio.id_libro != "":
-        libro = biblioteca.getLibroById(socio.id_libro)
-
-        libro.id_socio = ""
-        socio.id_libro = ""
-        biblioteca.updateLibro(libro)
-        biblioteca.updateSocio(socio)
-
-        print(f"Socio \"{socio.nombre}\" ha devuelto el libro \"{libro.titulo}\".")
-    else:
+    try:
+        libroDevuelto = biblioteca.devolverLibro(socio)
+        print(f"Socio \"{socio.nombre}\" ha devuelto el libro \"{libroDevuelto.titulo}\".")
+    except SocioNoTieneLibroPrestado as e:
         print(f"ERROR: Socio \"{socio.nombre}\" no ha prestado ningun libro.")
 
 def mostrarPrestas():
@@ -233,34 +227,16 @@ def mostrarPrestas():
         print(f" {presta[0].id:>{4}} | {presta[0].nombre:<{20}} | {presta[1].id:>{4}} | {presta[1].titulo:<{40}} ")
 
 def addLibro(titulo, autor, anio, categoria):
-    libros = biblioteca.libros
-
-    # Obtenemos el ultimo libro y le asignamos al nuevo libro su id mas 1
-    nuevoId = int(libros[-1].id) + 1
-    libro = Libro(nuevoId, titulo, autor, anio, categoria, "")
-
-    biblioteca.libros.append(libro)
+    biblioteca.addLibro(titulo, autor, anio, categoria)
+    print(f"Nuevo libro \"{titulo}\" ha sido añadido.")
+    
 
 def addSocio(nombre, email):
-    socios = biblioteca.socios
-
-    # Comprobamos que no exista un socio con el mismo email
-    existe = False
-    i = 0
-    while existe == False and i < len(socios):
-        if socios[i].email.lower() == str(email).lower():
-            print(f"ERROR: Ya hay un socio creado con el email \"{email}\"")
-            existe = True
-        i += 1
-
-    if existe != True:
-        # Obtenemos el ultimo socio y le asignamos al nuevo libro su id mas 1
-        nuevoId = str(int(socios[-1].id) + 1)
-        socio = Socio(nuevoId, nombre, email, "")
-
-        biblioteca.socios.append(socio)
-
-
+    try:
+        biblioteca.addSocio(nombre, email)
+        print(f"Nuevo socio \"{nombre}\" ha sido añadido.")
+    except EmailYaEnUso as e:
+        print(f"ERROR: Ya hay un socio creado con el email \"{email}\"")
 
 # Ejecuta el metodo main
 main()

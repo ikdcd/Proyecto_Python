@@ -98,4 +98,3 @@
 98, Estudio en escarlata, Arthur Conan Doyle, 1887, Misterio, 
 99, El signo de los cuatro, Arthur Conan Doyle, 1890, Misterio, 
 100, Dr. No, Ian Fleming, 1958, Espionaje, 
-101, prueba libro, June, 2026, ciencia, 

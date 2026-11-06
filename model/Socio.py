@@ -8,4 +8,4 @@ class Socio:
 
     # Metodos
     def prestaLibro (self):
-        return not self.id_libro
+        return bool(self.id_libro)

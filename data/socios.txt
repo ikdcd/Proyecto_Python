@@ -13,4 +13,3 @@
 13, Mateo Moreno, mateo.moreno@email.com, 50
 14, Valentina Gutiérrez, valentina.gutierrez@email.com, 
 15, Manuel Alonso, manuel.alonso@email.com, 81
-16, June Ras, ikdcd@plaiaundi.net, 51

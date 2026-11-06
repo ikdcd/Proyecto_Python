@@ -11,3 +11,4 @@ class Libro:
     # Metodos
     def isDisponible (self):
         return not self.id_socio
+
