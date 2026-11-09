@@ -1,0 +1,2 @@
+class EmailYaEnUso(Exception):
+    pass

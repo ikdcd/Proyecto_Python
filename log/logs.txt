@@ -1,0 +1,15 @@
+
+====================[ 2026-11-06 13:15:28 | BIBLIOTECA CARGADA ]====================
+
+[2026-11-06 13:15:47] SOCIO AÑADIDO: Socio(16, June Ras, ikdcd@plaiaundi.net, null).
+
+[2026-11-06 13:16:06] LIBRO AÑADIDO: Libro(101, Programacion en Python, June Ras, 2026, Informatica, null).
+
+[2026-11-06 13:16:14] LIBRO PRESTADO: June Ras (16) <-- Programacion en Python (101)
+
+[2026-11-06 13:16:47] LIBRO PRESTADO: Juan Martínez (3) <-- Ensayo sobre la ceguera (15)
+
+[2026-11-06 13:16:58] LIBRO DEVUELTO: June Ras (16) --> Programacion en Python (101)
+
+[2026-11-06 13:17:10] CAMBIOS GUARDADOS: Se ha guardado los cambios realizados.
+

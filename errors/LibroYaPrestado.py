@@ -1,0 +1,2 @@
+class LibroYaPrestado(Exception):
+    pass
