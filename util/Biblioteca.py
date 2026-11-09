@@ -15,6 +15,7 @@ class Biblioteca:
         self.libros = LibroDao.read()
         self.socios = SocioDao.read()
 
+        print("Biblioteca cargada.")
         Logger.newLogHeader("BIBLIOTECA CARGADA")
 
     # Metodos
@@ -80,7 +81,7 @@ class Biblioteca:
         libros = self.libros
 
         # Obtenemos el ultimo libro y le asignamos al nuevo libro su id mas 1
-        nuevoId = int(libros[-1].id) + 1
+        nuevoId = str(int(libros[-1].id) + 1)
         libro = Libro(nuevoId, titulo, autor, anio, categoria, "")
 
         self.libros.append(libro)

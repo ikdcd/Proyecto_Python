@@ -76,50 +76,50 @@ def printLibros(listaLibros, fila1, fila2, fila3, fila4, fila5, fila6):
     if fila1 == True:
         print(f" {"ID":^{anchoFila1}} ", end="")
         if any([fila2, fila3, fila4, fila5, fila6]):
-            print("|", end="")
+            print("│", end="")
     if fila2 == True:
         print(f" {"TITULO":^{anchoFila2}} ", end="")
         if any([fila3, fila4, fila5, fila6]):
-            print("|", end="")
+            print("│", end="")
     if fila3 == True:
         print(f" {"AUTOR":^{anchoFila3}} ", end="")
         if any([fila4, fila5, fila6]):
-            print("|", end="")
+            print("│", end="")
     if fila4 == True:
         print(f" {"AÑO":^{anchoFila4}} ", end="")
         if any([fila5, fila6]):
-            print("|", end="")
+            print("│", end="")
     if fila5 == True:
         print(f" {"CATEGORIA":^{anchoFila5}} ", end="")
         if fila6 == True:
-            print("|", end="")
+            print("│", end="")
     if fila6 == True:
         print(f" {"DISPONIBILIDAD":^{anchoFila6}} ", end="")
     print("")
 
     # Imprimimos el separador del encabezado y las filas
     if fila1 == True:
-        print(f"-{"-" * anchoFila1}-", end="")
+        print(f"─{"─" * anchoFila1}─", end="")
         if any([fila2, fila3, fila4, fila5, fila6]):
-            print("+", end="")
+            print("┼", end="")
     if fila2 == True:
-        print(f"-{"-" * anchoFila2}-", end="")
+        print(f"─{"─" * anchoFila2}─", end="")
         if any([fila3, fila4, fila5, fila6]):
-            print("+", end="")
+            print("┼", end="")
     if fila3 == True:
-        print(f"-{"-" * anchoFila3}-", end="")
+        print(f"─{"─" * anchoFila3}─", end="")
         if any([fila4, fila5, fila6]):
-            print("+", end="")
+            print("┼", end="")
     if fila4 == True:
-        print(f"-{"-" * anchoFila4}-", end="")
+        print(f"─{"─" * anchoFila4}─", end="")
         if any([fila5, fila6]):
-            print("+", end="")
+            print("┼", end="")
     if fila5 == True:
-        print(f"-{"-" * anchoFila5}-", end="")
+        print(f"─{"─" * anchoFila5}─", end="")
         if fila6 == True:
-            print("+", end="")
+            print("┼", end="")
     if fila6 == True:
-        print(f"-{"-" * anchoFila6}-", end="")
+        print(f"─{"─" * anchoFila6}─", end="")
     print("")
     
     # Imprimimos los libros
@@ -127,23 +127,23 @@ def printLibros(listaLibros, fila1, fila2, fila3, fila4, fila5, fila6):
         if fila1 == True:
             print(f" {libro.id:>{anchoFila1}} ", end="")
             if any([fila2, fila3, fila4, fila5, fila6]):
-                print("|", end="")
+                print("│", end="")
         if fila2 == True:
             print(f" {libro.titulo:<{anchoFila2}} ", end="")
             if any([fila3, fila4, fila5, fila6]):
-                print("|", end="")
+                print("│", end="")
         if fila3 == True:
             print(f" {libro.autor:<{anchoFila3}} ", end="")
             if any([fila4, fila5, fila6]):
-                print("|", end="")
+                print("│", end="")
         if fila4 == True:
             print(f" {libro.anio:^{anchoFila4}} ", end="")
             if any([fila5, fila6]):
-                print("|", end="")
+                print("│", end="")
         if fila5 == True:
             print(f" {libro.categoria:<{anchoFila5}} ", end="")
             if fila6 == True:
-                print("|", end="")
+                print("│", end="")
         if fila6 == True:
             if libro.id_socio != "":
                 print(f" {"No disponible":^{anchoFila6}} ", end="")
@@ -155,7 +155,7 @@ def mostrarLibros():
     # Obtenemos los libros
     libros = biblioteca.libros
 
-    print(f"\n{"-" * 60}[ LIBROS ]{"-" * 60}\n")
+    print(f"\nLIBROS:\n")
 
     printLibros(libros, True, True, True, True, True, True)
 
@@ -169,7 +169,7 @@ def mostrarLibrosDisponibles():
         if libro.id_socio == "":
             librosDisponibles.append(libro)
 
-    print(f"\n{"-" * 41}[ LIBROS DISPONIBLES ]{"-" * 41}\n")
+    print(f"\nLIBROS DISPONIBLES:\n")
 
     printLibros(librosDisponibles, True, True, True, True, True, False)
     
@@ -184,7 +184,7 @@ def buscarLibro(busqueda):
             librosEncontrados.append(libro)
 
     if len(librosEncontrados) > 0:
-        print(f"\n{"-" * 52}[ RESULTADOS DE BUSQUEDA ]{"-" * 52}\n")
+        print(f"\nRESULTADOS DE BUSQUEDA:\n")
 
         printLibros(librosEncontrados, True, True, True, True, True, True)
     else:
@@ -221,15 +221,16 @@ def mostrarPrestas():
                 if libro.id == socio.id_libro:
                     prestas.append([socio, libro])
 
-    print(f" {"ID":^{4}} | {"SOCIO":^{20}} | {"ID":^{4}} | {"LIBRO":^{40}} ")
-    print(f"-{"-" * 4}-+-{"-" * 20}-+-{"-" * 4}-+-{"-" * 40}-")
+    print(f"\nPRESTAS:\n")
+
+    print(f" {"ID":^{4}} │ {"SOCIO":^{20}} │ {"ID":^{4}} │ {"LIBRO":^{40}} ")
+    print(f"─{"─" * 4}─┼─{"─" * 20}─┼─{"─" * 4}─┼─{"─" * 40}─")
     for presta in prestas:
-        print(f" {presta[0].id:>{4}} | {presta[0].nombre:<{20}} | {presta[1].id:>{4}} | {presta[1].titulo:<{40}} ")
+        print(f" {presta[0].id:>{4}} │ {presta[0].nombre:<{20}} │ {presta[1].id:>{4}} │ {presta[1].titulo:<{40}} ")
 
 def addLibro(titulo, autor, anio, categoria):
     biblioteca.addLibro(titulo, autor, anio, categoria)
     print(f"Nuevo libro \"{titulo}\" ha sido añadido.")
-    
 
 def addSocio(nombre, email):
     try:

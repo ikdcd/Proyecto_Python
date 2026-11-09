@@ -12,7 +12,7 @@
 12, Pedro Paramo, Juan Rulfo, 1955, Realismo Magico, 8
 13, El alquimista, Paulo Coelho, 1988, Autoayuda, 
 14, Ficciones, Jorge Luis Borges, 1944, Literature, 
-15, Ensayo sobre la ceguera, Jose Saramago, 1995, Drama, 
+15, Ensayo sobre la ceguera, Jose Saramago, 1995, Drama, 3
 16, Crepusculo, Stephenie Meyer, 2005, Juvenil, 16
 17, Los juegos del hambre, Suzanne Collins, 2008, Aventura, 2
 18, Harry Potter y la piedra filosofal, J.K. Rowling, 1997, Fantasia, 
@@ -98,3 +98,4 @@
 98, Estudio en escarlata, Arthur Conan Doyle, 1887, Misterio, 
 99, El signo de los cuatro, Arthur Conan Doyle, 1890, Misterio, 
 100, Dr. No, Ian Fleming, 1958, Espionaje, 
+101, Programacion en Python, June Ras, 2026, Informatica, 
